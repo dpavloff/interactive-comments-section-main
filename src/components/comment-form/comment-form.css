@@ -1,0 +1,6 @@
+.reply-form {
+  position: sticky;
+  background-color: hsl(0, 0%, 100%);
+  width: 100%;
+  height: 180px;
+}

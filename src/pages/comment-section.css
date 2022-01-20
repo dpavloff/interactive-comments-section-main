@@ -1,0 +1,8 @@
+.comments-section {
+  display: flex;
+  align-items: center;
+  min-height: 100%;
+  max-width: 750px;
+  width: 100%;
+  flex-direction: column;
+}
