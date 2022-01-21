@@ -1,11 +1,11 @@
 import './App.css';
 
-import Comments from './pages/comment-section';
+import Main from './pages/main';
 
 function App() {
   return (
     <div className="content">
-     <Comments />
+     <Main />
     </div>
   );
 }

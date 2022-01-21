@@ -1,4 +1,4 @@
-{
+export default {
   "currentUser": {
     "image": { 
       "png": "./images/avatars/image-juliusomo.png",
