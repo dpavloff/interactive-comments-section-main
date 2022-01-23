@@ -1,0 +1,18 @@
+.comment-thread,
+.comment-replies-boxes {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.comment-replies {
+  display: flex;
+  flex-direction: row;
+}
+
+.thread-line {
+  height: 100%;
+  margin: 0 3rem;
+  width: 10px;
+  background-color: hsl(223, 19%, 93%);
+}
