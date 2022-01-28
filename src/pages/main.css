@@ -6,3 +6,9 @@
   width: 100%;
   flex-direction: column;
 }
+
+.loader {
+  display: grid;
+  margin: auto;
+  padding: auto;
+}

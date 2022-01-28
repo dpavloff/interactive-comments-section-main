@@ -1,20 +1,50 @@
-import React, { FC } from "react";
+import React, { FC, useEffect, useState } from "react";
+
 import CommentSection from "../components/comment-section/comment-section";
 import ReplyForm from "../components/comment-form/comment-form";
-import "./main.css";
-import data from "../data/data";
+import { useAppDispatch } from "../redux/hooks";
+import { RootState } from "../redux/store";
+import { fetchCommentsAndUser } from "../redux/actions/commentsActions";
+import { connect } from "react-redux";
+import { User } from "../types/User";
 import { Comment } from "../types/Comment";
+import "./main.css";
+import MoonLoader from "react-spinners/MoonLoader";
+import { GridLoader } from "react-spinners";
 
-const currentUser = data.currentUser;
-const comments: Comment[] = data.comments;
+interface IMain {
+  isLoading: boolean;
+  comments: Comment[];
+  user: User;
+}
 
-const Main: FC = () => {
+const Main: FC<IMain> = ({ isLoading, comments, user }) => {
+  const dispatch = useAppDispatch();
+
+  useEffect(() => {
+    dispatch(fetchCommentsAndUser());
+  }, [dispatch]);
+
   return (
     <div className="main">
-      <CommentSection comments={comments} />
-      <ReplyForm />
+      {isLoading ? (
+        <div className="loader">
+          <GridLoader loading={isLoading} color="hsl(238, 40%, 52%)" />
+        </div>
+      ) : (
+        <>
+          <CommentSection comments={comments} />
+          <ReplyForm />
+        </>
+      )}
     </div>
   );
 };
 
-export default Main;
+const mapStateToProps = (state: RootState) => ({
+  isLoading: state.isLoading,
+  comments: state.comments,
+  user: state.currentUser,
+});
+
+export default connect(mapStateToProps)(Main);

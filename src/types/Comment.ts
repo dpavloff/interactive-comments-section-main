@@ -17,3 +17,8 @@ export interface Reply {
   user:      User;
   replyingTo: string;
 }
+
+export interface CommentAndUser {
+  currentUser: User;
+  comments: Comment[];
+}
