@@ -1,16 +1,15 @@
 import React, { FC, useEffect, useState } from "react";
 
 import CommentSection from "../components/comment-section/comment-section";
-import ReplyForm from "../components/comment-form/comment-form";
+import ReplyForm from "../components/reply-form/reply-form";
 import { useAppDispatch } from "../redux/hooks";
 import { RootState } from "../redux/store";
 import { fetchCommentsAndUser } from "../redux/actions/commentsActions";
 import { connect } from "react-redux";
 import { User } from "../types/User";
 import { Comment } from "../types/Comment";
-import "./main.css";
-import MoonLoader from "react-spinners/MoonLoader";
 import { GridLoader } from "react-spinners";
+import "./main.css";
 
 interface IMain {
   isLoading: boolean;
@@ -32,10 +31,7 @@ const Main: FC<IMain> = ({ isLoading, comments, user }) => {
           <GridLoader loading={isLoading} color="hsl(238, 40%, 52%)" />
         </div>
       ) : (
-        <>
-          <CommentSection comments={comments} />
-          <ReplyForm />
-        </>
+        <CommentSection comments={comments} />
       )}
     </div>
   );

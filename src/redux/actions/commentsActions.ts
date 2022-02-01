@@ -1,7 +1,7 @@
 import { Dispatch } from "redux";
 
 import { CommentAndUser } from "../../types/Comment";
-import { getCommentsAndUser } from "../../api/getCommentsAndUser";
+import { apiGetCommentsAndUser } from "../../api/apiGetCommentsAndUser";
 
 export const API_GET_COMMENTS_AND_CURR_USER = "API/GET_COMMENTS_AND_CURR_USER";
 export const API_GET_COMMENTS_AND_CURR_USER_SUCCESS =
@@ -19,7 +19,7 @@ export function fetchCommentsAndUser() {
   return async (dispatch: Dispatch) => {
     dispatch(getCommentsAndCurrUser());
     try {
-      await getCommentsAndUser().then((data) =>
+      await apiGetCommentsAndUser().then((data) =>
         dispatch(getCommentsAndCurrUserSuccess(data))
       );
     } catch (err) {

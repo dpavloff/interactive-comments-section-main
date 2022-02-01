@@ -11,11 +11,20 @@ interface ICommentSectionProps {
 }
 
 const CommentSection: FC<ICommentSectionProps> = ({ comments }) => {
+  const [currOpen, setCurrOpen] = React.useState(-1);
+
   return (
     <div className="comment-section">
       {comments.length ? (
         comments.map((comment) => {
-          return <CommentThread key={comment.id} comment={comment} />;
+          return (
+            <CommentThread
+              key={comment.id}
+              comment={comment}
+              currOpen={currOpen}
+              setCurrOpen={setCurrOpen}
+            />
+          );
         })
       ) : (
         <CommentSectionStub />

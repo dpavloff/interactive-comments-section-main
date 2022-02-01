@@ -1,0 +1,31 @@
+.reply-form {
+  display: inline-flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  align-items: flex-start;
+  padding: 18px 22px;
+  gap: 1rem;
+  background-color: hsl(0, 0%, 100%);
+  border-radius: 1rem;
+}
+
+.reply-text-box {
+  margin: 0;
+  padding: 0.5rem 1rem;
+  min-height: 4.5rem;
+  width: 100%;
+  resize: none;
+  border: 1px solid hsl(238, 40%, 52%);
+  border-radius: 0.4rem;
+}
+
+.reply-text-box:focus,
+.reply-text-box:focus-visible {
+  border: none;
+  box-shadow: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadown: none;
+  resize: none;
+  border: 1px solid hsl(238, 40%, 52%);
+}

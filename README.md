@@ -1,3 +1,13 @@
+# How to start project
+
+1. Install json-server globally with `npm i -g json-server`
+
+2. Start json-server by cd'ing into interactive-comments-section-main/server: `cd ./server`
+
+3. Start server with node: `node index.js`
+
+4. Start react app: go into root project and then use `npm start`
+
 # Frontend Mentor - Interactive comments section
 
 ![Design preview for the Interactive comments section coding challenge](./design/desktop-preview.jpg)

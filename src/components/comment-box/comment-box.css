@@ -1,6 +1,6 @@
 .comment {
   display: grid;
-  padding: 34px 30px 40px 40px;
+  padding: 18px 22px;
   grid-template-columns: 1fr 9fr;
   grid-template-rows: 1fr auto;
   background-color: hsl(0, 0%, 100%);
@@ -36,6 +36,10 @@
   cursor: pointer;
 }
 
+.vote-up:hover {
+  fill: hsl(238, 40%, 52%);
+}
+
 .comment-user {
   display: flex;
   flex-direction: row;
@@ -61,7 +65,8 @@
 }
 
 .comment-buttons .comment-delete-button,
-.comment-buttons .comment-reply-button {
+.comment-buttons .comment-reply-button,
+.comment-buttons .comment-edit-button {
   display: flex;
   flex-direction: row;
   justify-content: center;
@@ -71,7 +76,13 @@
 }
 
 .comment-delete-button p,
-.comment-reply-button p {
+.comment-reply-button p,
+.comment-edit-button p {
   font-weight: bold;
   color: hsl(238, 40%, 52%);
+}
+
+.comment-age,
+.comment-content p {
+  color: hsl(212, 24%, 26%);
 }
