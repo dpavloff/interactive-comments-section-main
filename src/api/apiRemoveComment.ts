@@ -1,6 +1,3 @@
-import { Http2ServerResponse } from "http2";
-
-// hi
-const apiDeleteComment = (idRoute: number[]): void => {
+export const apiRemoveComment = (idRoute: number[]): void => {
   // Go to DB and remove comment with this route id
 };

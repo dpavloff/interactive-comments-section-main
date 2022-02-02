@@ -61,6 +61,20 @@
             },
             "username": "juliusomo"
           }
+        },
+        {
+          "id": 5,
+          "content": "This is a very sound advice.",
+          "createdAt": "1 week ago",
+          "score": 6,
+          "replyingTo": "ramsesmiron",
+          "user": {
+            "image": {
+              "png": "./images/avatars/image-amyrobson.png",
+              "webp": "./images/avatars/image-amyrobson.webp"
+            },
+            "username": "amyrobson"
+          }
         }
       ]
     }

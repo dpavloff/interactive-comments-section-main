@@ -26,8 +26,12 @@ const ReplyForm: FC<IReplyFormProps> = ({ webp, png, reciever }) => {
     setReplyText(e.currentTarget.value);
   };
 
+  const handleReplySend = (e: React.FormEvent<HTMLFormElement>) => {
+    e.preventDefault();
+  };
+
   return (
-    <form className="reply-form">
+    <form className="reply-form" onSubmit={handleReplySend}>
       <div className="user-avatar">
         <picture>
           <source srcSet={webp} width={42} height={42} />
@@ -43,7 +47,7 @@ const ReplyForm: FC<IReplyFormProps> = ({ webp, png, reciever }) => {
       <input
         type={"submit"}
         name="Reply"
-        value={"Reply"}
+        value={"REPLY"}
         className="reply-text-box-button"
       />
     </form>

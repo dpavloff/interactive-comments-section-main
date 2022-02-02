@@ -29,3 +29,17 @@
   resize: none;
   border: 1px solid hsl(238, 40%, 52%);
 }
+
+.reply-text-box-button {
+  padding: 1rem 1.5rem;
+  background: hsl(238, 40%, 52%);
+  color: white;
+  border: none;
+  border-radius: 0.5rem;
+  cursor: pointer;
+  transition: 0.2s;
+}
+
+.reply-text-box-button:hover {
+  background: hsl(239, 57%, 85%);
+}

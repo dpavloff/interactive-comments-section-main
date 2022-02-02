@@ -15,6 +15,7 @@ import "./comment-box.css";
 interface ICommentBoxProps {
   id: number;
   content: string;
+  replyingTo?: string;
   createdAt: string;
   score: number;
   image: Image;
@@ -27,6 +28,7 @@ interface ICommentBoxProps {
 const CommentBox: FC<ICommentBoxProps> = ({
   id,
   content,
+  replyingTo,
   createdAt,
   score,
   image,
@@ -85,7 +87,14 @@ const CommentBox: FC<ICommentBoxProps> = ({
           </div>
         </div>
         <div className="comment-content">
-          <p>{content}</p>
+          <p>
+            {replyingTo && (
+              <span className="comment-content-replying-to">
+                @{replyingTo}{" "}
+              </span>
+            )}
+            {content}
+          </p>
         </div>
       </div>
       {currOpen === id && <ReplyForm reciever={username} />}

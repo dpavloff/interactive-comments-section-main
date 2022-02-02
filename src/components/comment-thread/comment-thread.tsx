@@ -1,6 +1,6 @@
 import React, { FC } from "react";
 
-import { Comment } from "../../types/Comment";
+import { Comment, Reply } from "../../types/Comment";
 import CommentBox from "../comment-box/comment-box";
 import "./comment-thread.css";
 
@@ -32,12 +32,13 @@ const CommentThread: FC<ICommentSectionProps> = ({
         <div className="comment-replies">
           <div className="thread-line"></div>
           <div className="comment-replies-boxes">
-            {comment.replies.map((reply) => {
+            {comment.replies.map((reply: Reply) => {
               return (
                 <CommentBox
                   key={reply.id}
                   id={reply.id}
                   content={reply.content}
+                  replyingTo={reply.replyingTo}
                   createdAt={reply.createdAt}
                   score={reply.score}
                   image={reply.user.image}
