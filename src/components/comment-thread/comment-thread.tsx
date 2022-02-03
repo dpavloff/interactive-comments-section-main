@@ -1,12 +1,14 @@
 import React, { FC } from "react";
 
 import { Reply } from "../../types/Comment";
+import { UserVotes } from "../../types/UserVotes";
 import CommentBox from "../comment-box/comment-box";
 import "./comment-thread.css";
 
 interface ICommentSectionProps {
   threadID: number;
   replies: Reply[];
+  currentUserVotes: Record<string, UserVotes>;
   currOpen: number;
   setCurrOpen: React.Dispatch<React.SetStateAction<number>>;
 }
@@ -14,6 +16,7 @@ interface ICommentSectionProps {
 const CommentThread: FC<ICommentSectionProps> = ({
   threadID,
   replies,
+  currentUserVotes,
   currOpen,
   setCurrOpen,
 }) => {
@@ -30,6 +33,7 @@ const CommentThread: FC<ICommentSectionProps> = ({
                 id={reply.id}
                 content={reply.content}
                 score={reply.score}
+                currentUserScore={currentUserVotes[reply.id]}
                 image={reply.user.image}
                 createdAt={reply.createdAt}
                 threadID={threadID}

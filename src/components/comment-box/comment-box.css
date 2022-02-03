@@ -40,8 +40,15 @@
 }
 
 .vote-up:hover,
-.vote-down:hover {
-  fill: hsl(238, 40%, 52%);
+.comment-vote.is-liked .vote-up {
+  filter: invert(100%) sepia(16%) saturate(3520%) hue-rotate(209deg)
+    brightness(87%) contrast(85%);
+}
+
+.vote-down:hover,
+.comment-vote.is-disliked .vote-down {
+  filter: invert(39%) sepia(59%) saturate(1218%) hue-rotate(320deg)
+    brightness(119%) contrast(86%);
 }
 
 .comment-user {

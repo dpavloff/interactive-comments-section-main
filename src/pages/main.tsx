@@ -1,7 +1,6 @@
-import React, { FC, useEffect, useState } from "react";
+import React from "react";
 
 import CommentSection from "../components/comment-section/comment-section";
-import ReplyForm from "../components/reply-form/reply-form";
 import { useAppDispatch } from "../redux/hooks";
 import { RootState } from "../redux/store";
 import { fetchCommentsAndUser } from "../redux/actions/commentsActions";
@@ -17,10 +16,10 @@ interface IMain {
   user: User;
 }
 
-const Main: FC<IMain> = ({ isLoading, comments, user }) => {
+const Main: React.FC<IMain> = ({ isLoading, comments, user }) => {
   const dispatch = useAppDispatch();
 
-  useEffect(() => {
+  React.useEffect(() => {
     dispatch(fetchCommentsAndUser());
   }, [dispatch]);
 

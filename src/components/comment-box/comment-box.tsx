@@ -16,9 +16,10 @@ interface ICommentBoxProps {
   id: number;
   content: string;
   replyingTo?: string;
-  threadID?: number;
+  threadID: number;
   createdAt: string;
   score: number;
+  currentUserScore: number;
   image: Image;
   author: string;
   currentUser: User;
@@ -33,6 +34,7 @@ const CommentBox: React.FC<ICommentBoxProps> = ({
   threadID,
   createdAt,
   score,
+  currentUserScore,
   image,
   author,
   currentUser,
@@ -41,16 +43,22 @@ const CommentBox: React.FC<ICommentBoxProps> = ({
 }) => {
   const handleReplyClick = (e: React.MouseEvent<HTMLDivElement>) => {
     e.preventDefault();
-    setCurrOpen(id);
+    currOpen === id ? setCurrOpen(-1) : setCurrOpen(id);
   };
+
+  const commentVoteClassName = `
+    comment-vote ${currentUserScore === 1 && "is-liked"} ${
+    currentUserScore === -1 && "is-disliked"
+  }
+  `;
 
   return (
     <>
       <div className="comment">
-        <div className="comment-vote">
-          <img className="vote-up" src={plus_icon} />
+        <div className={commentVoteClassName}>
+          <img className="vote-up" src={plus_icon} alt="vote up" />
           <div className="vote-rating">{score}</div>
-          <img className="vote-down" src={minus_icon} />
+          <img className="vote-down" src={minus_icon} alt="vote down" />
         </div>
         <div className="comment-user">
           <div className="comment-info">
@@ -99,7 +107,7 @@ const CommentBox: React.FC<ICommentBoxProps> = ({
           </p>
         </div>
       </div>
-      {currOpen === id && <ReplyForm reciever={author} />}
+      {currOpen === id && <ReplyForm threadID={threadID} reciever={author} />}
     </>
   );
 };

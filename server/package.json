@@ -1,10 +1,22 @@
 {
-  "name": "json-server",
+  "name": "interactive-comments-server",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "src/server.js",
   "license": "MIT",
+  "scripts": {
+    "test": "nodemon src/server.js",
+    "start": "node src/server.js"
+  },
   "dependencies": {
+    "-": "^0.0.1",
+    "@faker-js/faker": "^6.0.0-alpha.5",
+    "axios": "^0.25.0",
     "express": "^4.17.2",
-    "json-server": "^0.17.0"
+    "prettier": "^2.5.1",
+    "uuid": "^8.3.2",
+    "v4": "^0.0.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.15"
   }
 }

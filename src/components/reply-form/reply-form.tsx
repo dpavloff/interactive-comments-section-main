@@ -1,17 +1,23 @@
-import React, { Component, FC } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
-import { RootState, store } from "../../redux/store";
+import { RootState } from "../../redux/store";
 import "./reply-form.css";
 
 interface IReplyFormProps {
   webp: string;
   png: string;
   reciever: string;
+  threadID: number;
 }
 
-const ReplyForm: FC<IReplyFormProps> = ({ webp, png, reciever }) => {
-  const [replyText, setReplyText] = React.useState("@" + reciever);
+const ReplyForm: React.FC<IReplyFormProps> = ({
+  webp,
+  png,
+  reciever,
+  threadID,
+}) => {
+  const [replyText, setReplyText] = React.useState("");
   const textAreaRef = React.useRef<any>();
 
   React.useEffect(() => {
@@ -35,7 +41,7 @@ const ReplyForm: FC<IReplyFormProps> = ({ webp, png, reciever }) => {
       <div className="user-avatar">
         <picture>
           <source srcSet={webp} width={42} height={42} />
-          <img src={png} width={42} height={42} />
+          <img src={png} width={42} height={42} alt="your avatar" />
         </picture>
       </div>
       <textarea

@@ -9,6 +9,7 @@ export const initialState = {
       webp: "",
     },
     username: "",
+    commentVotes: {},
   },
   comments: [],
   isLoading: false,
@@ -29,6 +30,7 @@ export default function commentsReducer(
             webp: "",
           },
           username: "",
+          commentVotes: {},
         },
       };
     }
