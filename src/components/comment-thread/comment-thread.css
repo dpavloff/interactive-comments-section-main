@@ -1,11 +1,11 @@
 .comment-thread,
-.comment-replies-boxes {
+.comment-replies {
   display: flex;
   flex-direction: column;
   gap: 1.5rem;
 }
 
-.comment-replies {
+.comment-replies-section {
   display: flex;
   flex-direction: row;
 }

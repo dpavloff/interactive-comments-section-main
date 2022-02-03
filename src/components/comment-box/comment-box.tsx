@@ -1,4 +1,4 @@
-import React, { Component, FC } from "react";
+import React from "react";
 import { connect } from "react-redux";
 
 import ReplyForm from "../reply-form/reply-form";
@@ -16,23 +16,25 @@ interface ICommentBoxProps {
   id: number;
   content: string;
   replyingTo?: string;
+  threadID?: number;
   createdAt: string;
   score: number;
   image: Image;
-  username: string;
+  author: string;
   currentUser: User;
   currOpen: number;
   setCurrOpen: React.Dispatch<React.SetStateAction<number>>;
 }
 
-const CommentBox: FC<ICommentBoxProps> = ({
+const CommentBox: React.FC<ICommentBoxProps> = ({
   id,
   content,
   replyingTo,
+  threadID,
   createdAt,
   score,
   image,
-  username,
+  author,
   currentUser,
   currOpen,
   setCurrOpen,
@@ -59,14 +61,14 @@ const CommentBox: FC<ICommentBoxProps> = ({
                 width={42}
                 height={42}
                 src={image.png}
-                alt={username + " profile picture"}
+                alt={author + " profile picture"}
               />
             </picture>
-            <p className="comment-username">{username}</p>
+            <p className="comment-username">{author}</p>
             <p className="comment-age">{createdAt}</p>
           </div>
           <div className="comment-buttons">
-            {currentUser.username === username ? (
+            {currentUser.username === author ? (
               <>
                 <div className="comment-delete-button">
                   <img src={delete_icon} width={12} height={14} alt="" />
@@ -97,7 +99,7 @@ const CommentBox: FC<ICommentBoxProps> = ({
           </p>
         </div>
       </div>
-      {currOpen === id && <ReplyForm reciever={username} />}
+      {currOpen === id && <ReplyForm reciever={author} />}
     </>
   );
 };

@@ -18,12 +18,29 @@ const CommentSection: FC<ICommentSectionProps> = ({ comments }) => {
       {comments.length ? (
         comments.map((comment) => {
           return (
-            <CommentThread
-              key={comment.id}
-              comment={comment}
-              currOpen={currOpen}
-              setCurrOpen={setCurrOpen}
-            />
+            <div className="comment-thread">
+              <CommentBox
+                key={comment.id}
+                id={comment.id}
+                content={comment.content}
+                createdAt={comment.createdAt}
+                score={comment.score}
+                image={comment.user.image}
+                author={comment.user.username}
+                currOpen={currOpen}
+                setCurrOpen={setCurrOpen}
+              />
+              {comment.replies.length ? (
+                <CommentThread
+                  threadID={comment.id}
+                  replies={Array.from(comment.replies)}
+                  currOpen={currOpen}
+                  setCurrOpen={setCurrOpen}
+                />
+              ) : (
+                ""
+              )}
+            </div>
           );
         })
       ) : (
