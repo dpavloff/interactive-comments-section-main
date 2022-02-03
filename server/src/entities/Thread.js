@@ -1,6 +1,6 @@
 const { v4 } = require("uuid");
 
-module.exports = class Comment {
+module.exports = class Thread {
   constructor({ id, content, createdAt, score, user, replies }) {
     super(props);
     this.id = id || v4();

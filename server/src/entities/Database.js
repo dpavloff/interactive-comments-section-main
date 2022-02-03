@@ -4,13 +4,20 @@ const { dbDumpFile } = require("../config");
 const { writeFile } = require("../utils/fs");
 const { prettifyJsonToString } = require("../utils/prettifyJsonToString");
 
-const JPG = require("../entities/JPG");
+const Reply = require("../entities/Reply");
+const Comment = require("./Thread");
+const Image = require("../entities/Image");
+const User = require("../entities/User");
 
 class Database extends EventEmitter {
   constructor() {
     super();
 
     this.idToJpg = {};
+    this.users = {};
+    this.images = {};
+    this.replies = {};
+    this.threads = {};
   }
 
   async initFromDump() {

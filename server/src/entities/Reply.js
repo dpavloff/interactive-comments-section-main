@@ -2,8 +2,9 @@ const { create } = require("domain");
 const { v4 } = require("uuid");
 
 module.exports = class Reply {
-  constructor({ id, content, createdAt, score, user, replyingTo }) {
+  constructor({ id, threadID, content, createdAt, score, user, replyingTo }) {
     this.id = id || v4;
+    this.threadID = threadID;
     this.content = content;
     this.createdAt = createdAt || Date.now();
     this.score = score || 0;
@@ -14,6 +15,7 @@ module.exports = class Reply {
   toPublicJson() {
     return {
       id: this.id,
+      threadID: this.threadID,
       content: this.content,
       createdAt: this.createdAt,
       score: this.score,

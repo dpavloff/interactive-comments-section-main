@@ -5,84 +5,124 @@
       "webp": "juliusomo.webp"
     },
     "username": "juliusomo",
-    "commentVotes": {
-      "1": 1,
-      "2": -1,
-      "3": 1,
-      "4": 1,
-      "5": -1
+    "commentVotes": {}
+  },
+  "images": {
+    "d983118c-a6af-4621-b709-9fb90b3f2b0f": {
+      "id": "d983118c-a6af-4621-b709-9fb90b3f2b0f",
+      "png": "d983118c-a6af-4621-b709-9fb90b3f2b0f.png",
+      "webp": "d983118c-a6af-4621-b709-9fb90b3f2b0f.webp"
+    },
+    "194a4a10-e294-44d5-bb98-89b424c4878c": {
+      "id": "194a4a10-e294-44d5-bb98-89b424c4878c",
+      "png": "194a4a10-e294-44d5-bb98-89b424c4878c.png",
+      "webp": "194a4a10-e294-44d5-bb98-89b424c4878c.webp"
+    },
+    "b67e96b3-341a-45ae-b3b6-65fe9139804e": {
+      "id": "b67e96b3-341a-45ae-b3b6-65fe9139804e",
+      "png": "b67e96b3-341a-45ae-b3b6-65fe9139804e.png",
+      "webp": "b67e96b3-341a-45ae-b3b6-65fe9139804e.webp"
+    },
+    "2590eef0-a8fc-4550-935a-5fb86df3ca4a": {
+      "id": "2590eef0-a8fc-4550-935a-5fb86df3ca4a",
+      "png": "2590eef0-a8fc-4550-935a-5fb86df3ca4a.png",
+      "webp": "2590eef0-a8fc-4550-935a-5fb86df3ca4a.webp"
     }
   },
-  "comments": [
+  "users": {
+    "d983118c-a6af-4621-b709-9fb90b3f2b0f": {
+      "image": "d983118c-a6af-4621-b709-9fb90b3f2b0f",
+      "username": "juliusomo",
+      "commentVotes": {}
+    },
+    "194a4a10-e294-44d5-bb98-89b424c4878c": {
+      "image": "194a4a10-e294-44d5-bb98-89b424c4878c",
+      "username": "amyrobson",
+      "commentVotes": {}
+    },
+    "b67e96b3-341a-45ae-b3b6-65fe9139804e": {
+      "image": "b67e96b3-341a-45ae-b3b6-65fe9139804e",
+      "username": "maxblagun",
+      "commentVotes": {}
+    },
+    "2590eef0-a8fc-4550-935a-5fb86df3ca4a": {
+      "image": "2590eef0-a8fc-4550-935a-5fb86df3ca4a",
+      "username": "ramsesmiron",
+      "commentVotes": {}
+    }
+  },
+  "replies": [
     {
-      "id": 1,
+      "id": "d9c3d70a-ecca-443f-8a11-8cca1140475c",
+      "threadID": "ee222e20-6053-4023-82fa-31418c13bc33",
+      "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
+      "createdAt": "1 week ago",
+      "score": 4,
+      "replyingTo": "maxblagun",
+      "user": {
+        "image": {
+          "png": "ramsesmiron.png",
+          "webp": "ramsesmiron.webp"
+        },
+        "username": "ramsesmiron"
+      }
+    },
+    {
+      "id": "7e45795e-f59b-425a-961f-eb83e6e6501b",
+      "threadID": "ee222e20-6053-4023-82fa-31418c13bc33",
+      "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
+      "createdAt": "2 days ago",
+      "score": 2,
+      "replyingTo": "ramsesmiron",
+      "user": {
+        "image": {
+          "png": "juliusomo.png",
+          "webp": "juliusomo.webp"
+        },
+        "username": "juliusomo"
+      }
+    },
+    {
+      "id": "859721d5-5dbe-4638-95c9-8ad460e96c37",
+      "threadID": "ee222e20-6053-4023-82fa-31418c13bc33",
+      "content": "This is a very sound advice.",
+      "createdAt": "1 week ago",
+      "score": 6,
+      "replyingTo": "ramsesmiron",
+      "user": {
+        "image": {
+          "png": "amyrobson.png",
+          "webp": "amyrobson.webp"
+        },
+        "username": "amyrobson"
+      }
+    }
+  ],
+  "threads": [
+    {
+      "id": "35b268d1-d3fe-4605-b5c2-cad886f8fb00",
       "content": "Impressive! Though it seems the drag feature could be improved. But overall it looks incredible. You've nailed the design and the responsiveness at various breakpoints works really well.",
       "createdAt": "1 month ago",
       "score": 12,
       "user": {
         "image": {
-          "png": "image-amyrobson.png",
-          "webp": "image-amyrobson.webp"
+          "png": "amyrobson.png",
+          "webp": "amyrobson.webp"
         },
         "username": "amyrobson"
       },
       "replies": []
     },
     {
-      "id": 2,
+      "id": "ee222e20-6053-4023-82fa-31418c13bc33",
       "content": "Woah, your project looks awesome! How long have you been coding for? I'm still new, but think I want to dive into React as well soon. Perhaps you can give me an insight on where I can learn React? Thanks!",
       "createdAt": "2 weeks ago",
       "score": 5,
-      "user": {
-        "image": {
-          "png": "image-maxblagun.png",
-          "webp": "image-maxblagun.webp"
-        },
-        "username": "maxblagun"
-      },
+      "user": "b67e96b3-341a-45ae-b3b6-65fe9139804e",
       "replies": [
-        {
-          "id": 3,
-          "content": "If you're still new, I'd recommend focusing on the fundamentals of HTML, CSS, and JS before considering React. It's very tempting to jump ahead but lay a solid foundation first.",
-          "createdAt": "1 week ago",
-          "score": 4,
-          "replyingTo": "maxblagun",
-          "user": {
-            "image": {
-              "png": "image-ramsesmiron.png",
-              "webp": "image-ramsesmiron.webp"
-            },
-            "username": "ramsesmiron"
-          }
-        },
-        {
-          "id": 4,
-          "content": "I couldn't agree more with this. Everything moves so fast and it always seems like everyone knows the newest library/framework. But the fundamentals are what stay constant.",
-          "createdAt": "2 days ago",
-          "score": 2,
-          "replyingTo": "ramsesmiron",
-          "user": {
-            "image": {
-              "png": "image-juliusomo.png",
-              "webp": "image-juliusomo.webp"
-            },
-            "username": "juliusomo"
-          }
-        },
-        {
-          "id": 5,
-          "content": "This is a very sound advice.",
-          "createdAt": "1 week ago",
-          "score": 6,
-          "replyingTo": "ramsesmiron",
-          "user": {
-            "image": {
-              "png": "image-amyrobson.png",
-              "webp": "image-amyrobson.webp"
-            },
-            "username": "amyrobson"
-          }
-        }
+        "d9c3d70a-ecca-443f-8a11-8cca1140475c",
+        "7e45795e-f59b-425a-961f-eb83e6e6501b",
+        "859721d5-5dbe-4638-95c9-8ad460e96c37"
       ]
     }
   ]
